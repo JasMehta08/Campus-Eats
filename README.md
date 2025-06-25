@@ -17,7 +17,7 @@ A full-stack food ordering and pickup system for college campuses. Students can 
 
 ## 📁 Folder Structure
 
-src/
+```src/
 ├── models/          # Mongoose schemas
 ├── controllers/     # Route logic
 ├── routes/          # Express endpoints
@@ -28,7 +28,7 @@ src/
 ├── utils/           # ERN generator, helpers
 ├── app.ts
 └── index.ts
-
+```
 ---
 
 ## 🔧 Setup Instructions
