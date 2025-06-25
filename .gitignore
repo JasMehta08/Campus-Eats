@@ -1,2 +1,30 @@
-.env 
+# Node modules (dependencies)
+node_modules/
+
+# Environment variables (secrets)
+.env
+
+# Build output (for TypeScript)
 dist/
+build/
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# IDE/editor folders
+.vscode/
+.idea/
+*.swp
+
+# Test coverage
+coverage/
+
+# Optional: local database files, if any
+*.local
