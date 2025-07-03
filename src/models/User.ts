@@ -1,19 +1,22 @@
-import mongoose , { Schema, Document } from 'mongoose';
+import mongoose ,{ Schema, Document}from "mongoose";
 
-export interface IUser extends Document {
-    fullName : string;
-    email : string;
-    role : 'student'|'cafeteria_owner'|'cafeteria_manager';
-    cafeteria : mongoose.Types.ObjectId;
-    createdAt : Date;
-    updatedAt : Date;
+
+export interface IUser extends Document{
+  googleId: string;
+  displayName?: string;
+  email?: string;
+  photo?: string;
+  role: "student" | "cafeteria_manager" | "owner" | "admin";
+  cafeteria?: mongoose.Types.ObjectId | null;
 }
+const userSchema = new mongoose.Schema({
+  googleId: { type: String, required: true, unique: true },
+  displayName: String,
+  email: String,
+  photo: String,
+  role: { type: String, enum: ["student", "cafeteria_manager", "owner", "admin"], default: "student" },
+  cafeteria: { type: mongoose.Schema.Types.ObjectId, ref: "Cafeteria", default: null },
+  
+});
 
-const UserSchema : Schema = new Schema({
-    fullName: { type: String, required: true },
-  email: { type: String, required: true, unique: true },
-  role: { type: String, enum: ['student', 'cafeteria_owner','cafeteria_manager'], required: true },
-  cafeteria: { type: Schema.Types.ObjectId, ref: 'Cafeteria' },
-}, { timestamps: true });
-
-export default mongoose.model<IUser>('User', UserSchema);
+export default mongoose.model("User", userSchema);
