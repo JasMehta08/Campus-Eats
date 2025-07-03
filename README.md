@@ -1,4 +1,4 @@
-# Campus Eats (Work in Progress)
+# Campus Eats 
 
 A full-stack food ordering and pickup system for college campuses. Students can place orders online, and cafeteria staff can manage them in real-time through a role-based dashboard.
 
